@@ -1,0 +1,171 @@
+name: YetiPL
+version: '${version}'
+main: gg.yetisboxxed.yetipl.YetiPLPlugin
+api-version: '26.2'
+author: YetiBOXXED
+description: All-in-one YetisBOXXED server platform for Paper 26.2.
+softdepend: [WorldEdit, WorldGuard, LuckPerms, Vault, Geyser-Spigot, floodgate, ViaVersion, ViaBackwards, ProtocolLib]
+commands:
+  yetipl: {description: YetiPL administration and diagnostics, permission: yetipl.admin}
+  updates: {description: View YetiPL update history, permission: yetipl.updates}
+  wand: {description: Get the YetiPL Golden selection wand, permission: yetipl.worldedit}
+  setwarp: {description: Create a warp, permission: yetipl.warps.admin}
+  warp: {description: Teleport to a warp, permission: yetipl.warps}
+  warps: {description: List warps, permission: yetipl.warps}
+  delwarp: {description: Delete a warp, permission: yetipl.warps.admin}
+  preset: {description: Open and manage your one Creative Preset, permission: yetipl.presets}
+  upgrades: {description: Open Preset upgrades, permission: yetipl.presets}
+  yeticoins: {description: View and manage Yeti Coins, permission: yetipl.yeticoins}
+  shop: {description: Open the Yeti Coin shop, permission: yetipl.shop}
+  customitems: {description: Open custom items in the shop, permission: yetipl.shop}
+  crate: {description: Manage crates, permission: yetipl.crates.admin}
+  bindcrate: {description: Bind the targeted block to a crate, permission: yetipl.crates.admin}
+  bindcratekey: {description: Bind your held item as a crate key, permission: yetipl.crates.admin}
+  gen: {description: Manage regenerating block regions, permission: yetipl.gens.admin}
+  arch: {description: Manage custom archaeology regions, permission: yetipl.arch.admin}
+  rg: {description: Easy YetiPL region protection, permission: yetipl.regions.admin}
+  portal: {description: Manage easy portals, permission: yetipl.portals.admin}
+  potionmaker: {description: Open the custom potion maker, permission: yetipl.potions}
+  holo: {description: Manage holograms, permission: yetipl.holograms.admin}
+  rules: {description: Show server rules, permission: yetipl.rules}
+  discord: {description: Show the YetisBOXXED Discord, permission: yetipl.discord}
+  chatfilter: {description: Configure the chat filter, permission: yetipl.chatfilter.manage}
+  chatcooldown: {description: Configure rank chat cooldowns, permission: yetipl.chat.admin}
+  chatcolor: {description: Configure rank chat color, permission: yetipl.chatcolor}
+  prefix: {description: Configure exact rank prefixes, permission: yetipl.ranks.admin}
+  affix: {description: Configure rank prefixes and suffixes, permission: yetipl.ranks.admin}
+  rank: {description: Manage YetiPL rank presets, permission: yetipl.ranks.admin}
+  bugs: {description: Submit a bug report, permission: yetipl.bugs.submit}
+  seebugs: {description: View and manage bug reports, permission: yetipl.bugs.view}
+  itemdisguise: {description: Visually disguise the held item, permission: yetipl.itemdisguise}
+  disguise: {description: Cosmetic item disguise tools, permission: yetipl.disguise}
+  ban: {description: Temporary player ban only, permission: yetipl.ban}
+  banip: {description: Temporary IP ban only, permission: yetipl.banip}
+  banlist: {description: List active temporary bans, permission: yetipl.banlist}
+  vanish: {description: Toggle vanish, permission: yetipl.vanish}
+  spectate: {description: Spectate a player, permission: yetipl.spectate}
+  freeze: {description: Freeze a player, permission: yetipl.freeze}
+  anvil: {description: Portable anvil, permission: yetipl.workstation.anvil}
+  craft: {description: Portable crafting table, permission: yetipl.workstation.craft}
+  grindstone: {description: Portable grindstone, permission: yetipl.workstation.grindstone}
+  smith: {description: Portable smithing table, permission: yetipl.workstation.smith}
+  blastfurnace: {description: Portable blast furnace, permission: yetipl.workstation.blastfurnace}
+  smoker: {description: Portable smoker, permission: yetipl.workstation.smoker}
+  workstation: {description: Open a portable workstation, permission: yetipl.workstation}
+  head: {description: Get a player head, permission: yetipl.head}
+  enchant: {description: Apply enchantments up to level 255, permission: yetipl.enchant}
+  ride: {description: Ride another player, permission: yetipl.ride}
+  trim: {description: Get YetiPL custom trim templates, permission: yetipl.trim}
+  commands: {description: Open the YetiPL command directory, permission: yetipl.commands}
+  vault: {description: Open a player vault, permission: yetipl.vault}
+  pv: {description: Open a player vault, permission: yetipl.vault}
+  enderchest: {description: Open an ender chest, permission: yetipl.enderchest}
+  ec: {description: Open an ender chest, permission: yetipl.enderchest}
+  shopkeeper: {description: Manage YetiPL shopkeepers, permission: yetipl.shopkeepers.admin}
+  disc: {description: Configure custom music discs, permission: yetipl.discs.admin}
+  nakedkilling: {description: Toggle naked-killing protection, permission: yetipl.pvp.admin}
+  yac: {description: YetiPL anti-cheat status, permission: yetipl.anticheat.admin}
+  nbt: {description: Open the Birdflop-aware held-item editor, permission: yetipl.nbt}
+  lpgui: {description: Open the in-game LuckPerms bridge, permission: yetipl.permissions}
+  mentions: {description: Toggle player mention notifications, permission: yetipl.mentions}
+  chatgames: {description: Manage chat games, permission: yetipl.chatgames}
+  hub: {description: Teleport to the YetisBOXXED Hub, permission: yetipl.hub}
+  sethub: {description: Set the Hub spawn, permission: yetipl.hub.admin}
+  hubregion: {description: Configure Hub region from selection, permission: yetipl.hub.admin}
+  yetissmp: {description: Open or enter YetisSMP, permission: yetipl.smp}
+  resourceworld: {description: Enter the Resource World, permission: yetipl.smp}
+  claimingworld: {description: Enter the Claiming World, permission: yetipl.smp}
+  coolworld: {description: Enter the Cool World, permission: yetipl.smp}
+  setsmpspawn: {description: Set spawn for the current SMP world, permission: yetipl.smp.admin}
+  stand: {description: Get a custom server-selector stand, permission: yetipl.hub.admin}
+  giveyeticoins: {description: Console-safe YetiCoins delivery command, permission: yetipl.admin.giveyeticoins}
+  unfreeze: {description: Unfreeze a player, permission: yetipl.admin.freeze}
+  mute: {description: Mute a player, permission: yetipl.admin.mute}
+  unmute: {description: Unmute a player, permission: yetipl.admin.mute}
+  clearchat: {description: Clear public chat, permission: yetipl.admin.clearchat}
+  mutechat: {description: Toggle public chat, permission: yetipl.admin.mutechat}
+  broadcast: {description: Broadcast a YetisBOXXED announcement, permission: yetipl.admin.broadcast}
+  consolebroadcast: {description: Broadcast an official console-style message, permission: yetipl.admin.consolebroadcast}
+  bottoggle: {description: Toggle YetiBot chat mode, permission: yetipl.bot}
+  bot: {description: Chat with YetiBot, permission: yetipl.bot}
+  botfeedback: {description: Send feedback to YetiBot staff log, permission: yetipl.bot}
+permissions:
+  yetipl.admin: {default: op, children: {yetipl.*: true}}
+  yetipl.*: {default: false}
+  yetipl.updates: {default: true}
+  yetipl.worldedit: {default: op}
+  yetipl.warps: {default: true}
+  yetipl.warps.admin: {default: op}
+  yetipl.presets: {default: true}
+  yetipl.presets.admin: {default: op}
+  yetipl.presets.restricteditems.bypass: {default: op}
+  yetipl.yeticoins: {default: true}
+  yetipl.yeticoins.admin: {default: op}
+  yetipl.yeticoins.infinite: {default: op}
+  yetipl.shop: {default: true}
+  yetipl.crates.admin: {default: op}
+  yetipl.gens.admin: {default: op}
+  yetipl.arch.admin: {default: op}
+  yetipl.regions.admin: {default: op}
+  yetipl.regions.bypass: {default: op}
+  yetipl.portals.admin: {default: op}
+  yetipl.potions: {default: op}
+  yetipl.holograms.admin: {default: op}
+  yetipl.rules: {default: true}
+  yetipl.discord: {default: true}
+  yetipl.chatfilter.manage: {default: op}
+  yetipl.chatfilter.bypass: {default: op}
+  yetipl.chat.admin: {default: op}
+  yetipl.chatcolor: {default: true}
+  yetipl.chatcooldown.bypass: {default: op}
+  yetipl.ranks.admin: {default: op}
+  yetipl.bugs.submit: {default: true}
+  yetipl.bugs.view: {default: op}
+  yetipl.bugs.manage: {default: op}
+  yetipl.itemdisguise: {default: op}
+  yetipl.disguise: {default: op}
+  yetipl.ban: {default: op}
+  yetipl.banip: {default: op}
+  yetipl.banlist: {default: op}
+  yetipl.vanish: {default: op}
+  yetipl.vanish.see: {default: op}
+  yetipl.spectate: {default: op}
+  yetipl.freeze: {default: op}
+  yetipl.freeze.bypass: {default: op}
+  yetipl.workstation: {default: true}
+  yetipl.workstation.anvil: {default: op}
+  yetipl.workstation.craft: {default: true}
+  yetipl.workstation.grindstone: {default: op}
+  yetipl.workstation.smith: {default: op}
+  yetipl.workstation.blastfurnace: {default: op}
+  yetipl.workstation.smoker: {default: op}
+  yetipl.head: {default: op}
+  yetipl.enchant: {default: op}
+  yetipl.ride: {default: op}
+  yetipl.trim: {default: op}
+  yetipl.commands: {default: true}
+  yetipl.vault: {default: true}
+  yetipl.enderchest: {default: true}
+  yetipl.enderchest.others: {default: op}
+  yetipl.shopkeepers.admin: {default: op}
+  yetipl.discs.admin: {default: op}
+  yetipl.pvp.admin: {default: op}
+  yetipl.pvp.cooldown.bypass: {default: op}
+  yetipl.anticheat.admin: {default: op}
+  yetipl.nbt: {default: op}
+  yetipl.permissions: {default: op}
+  yetipl.mentions: {default: true}
+  yetipl.chatgames: {default: op}
+  yetipl.hub: {default: true}
+  yetipl.hub.admin: {default: op}
+  yetipl.smp: {default: true}
+  yetipl.smp.admin: {default: op}
+  yetipl.admin.giveyeticoins: {default: op}
+  yetipl.admin.freeze: {default: op}
+  yetipl.admin.mute: {default: op}
+  yetipl.admin.clearchat: {default: op}
+  yetipl.admin.mutechat: {default: op}
+  yetipl.admin.broadcast: {default: op}
+  yetipl.admin.consolebroadcast: {default: op}
+  yetipl.bot: {default: true}
+  yetipl.bot.admin: {default: op}

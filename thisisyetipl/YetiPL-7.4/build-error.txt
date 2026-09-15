@@ -1,0 +1,185 @@
+
+> Task :compileJava
+/workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/PresetService.java:22: warning: [removal] DO_MOB_SPAWNING in GameRule has been deprecated and marked for removal
+    public void enable(){ world=Bukkit.getWorld(WORLD_NAME); if(world==null){ WorldCreator c=new WorldCreator(WORLD_NAME); c.environment(World.Environment.NORMAL); c.generator(new VoidGenerator()); world=Bukkit.createWorld(c);} if(world!=null){world.setSpawnLocation(0,65,0);world.setGameRule(GameRule.DO_MOB_SPAWNING,false);world.setGameRule(GameRule.DO_WEATHER_CYCLE,false);} }
+                                                                                                                                                                                                                                                                                                             ^
+/workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/PresetService.java:22: warning: [removal] DO_WEATHER_CYCLE in GameRule has been deprecated and marked for removal
+    public void enable(){ world=Bukkit.getWorld(WORLD_NAME); if(world==null){ WorldCreator c=new WorldCreator(WORLD_NAME); c.environment(World.Environment.NORMAL); c.generator(new VoidGenerator()); world=Bukkit.createWorld(c);} if(world!=null){world.setSpawnLocation(0,65,0);world.setGameRule(GameRule.DO_MOB_SPAWNING,false);world.setGameRule(GameRule.DO_WEATHER_CYCLE,false);} }
+                                                                                                                                                                                                                                                                                                                                                               ^
+/workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/PresetService.java:38: warning: [removal] regenerateChunk(int,int) in World has been deprecated and marked for removal
+    public void reset(UUID owner){Location c=center(owner);if(c==null)return;int radius=size(owner)/2;int minChunkX=(c.getBlockX()-radius)>>4,maxChunkX=(c.getBlockX()+radius)>>4,minChunkZ=(c.getBlockZ()-radius)>>4,maxChunkZ=(c.getBlockZ()+radius)>>4;Deque<int[]> queue=new ArrayDeque<>();for(int x=minChunkX;x<=maxChunkX;x++)for(int z=minChunkZ;z<=maxChunkZ;z++)queue.add(new int[]{x,z});new org.bukkit.scheduler.BukkitRunnable(){@Override public void run(){int budget=6;while(budget-->0&&!queue.isEmpty()){int[] q=queue.removeFirst();world.regenerateChunk(q[0],q[1]);}if(queue.isEmpty()){generatePlatform(owner);cancel();}}}.runTaskTimer(plugin,1L,1L); }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ^
+/workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/listener/CoreListener.java:71: error: cannot find symbol
+    @EventHandler public void onInventoryClick(InventoryClickEvent e){if(!(e.getWhoClicked() instanceof Player p))return;String title=e.getView().getTitle();if(title.equals("✦ YETIBOXXED PRESETS ✦")){e.setCancelled(true);if(e.getRawSlot()==13&&!plugin.presets().owns(p.getUniqueId())){if(plugin.presets().buy(p)){p.closeInventory();plugin.presets().enter(p,p.getUniqueId());}else p.sendMessage(Msg.error("You need "+plugin.presets().purchaseCost()+" ❄."));}else if(e.getRawSlot()==10&&plugin.presets().owns(p.getUniqueId())){p.closeInventory();plugin.presets().enter(p,p.getUniqueId());}else if(e.getRawSlot()==12&&plugin.presets().owns(p.getUniqueId()))pl.menus().upgrades(p);}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ^
+  symbol:   variable pl
+  location: class CoreListener
+/workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/listener/CoreListener.java:72: error: cannot find symbol
+        if(title.equals("✦ PLOT UPGRADES ✦")){e.setCancelled(true);if(e.getRawSlot()==13){if(plugin.presets().upgrade(p)){p.sendMessage(Msg.gold("Preset upgraded to level "+plugin.presets().level(p.getUniqueId())+"."));pl.menus().upgrades(p);}else p.sendMessage(Msg.error("Upgrade unavailable or insufficient Yeti Coins."));}}
+                                                                                                                                                                                                                           ^
+  symbol:   variable pl
+  location: class CoreListener
+/workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/SmpHubService.java:25: error: cannot find symbol
+        store.config().set("spawns."+id+".world", loc.getWorld().getName());
+             ^
+  symbol:   method config()
+  location: variable store of type YamlStore
+/workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/SmpHubService.java:26: error: cannot find symbol
+        store.config().set("spawns."+id+".x", loc.getX());
+             ^
+  symbol:   method config()
+  location: variable store of type YamlStore
+/workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/SmpHubService.java:27: error: cannot find symbol
+        store.config().set("spawns."+id+".y", loc.getY());
+             ^
+  symbol:   method config()
+  location: variable store of type YamlStore
+/workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/SmpHubService.java:28: error: cannot find symbol
+        store.config().set("spawns."+id+".z", loc.getZ());
+             ^
+  symbol:   method config()
+  location: variable store of type YamlStore
+/workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/SmpHubService.java:29: error: cannot find symbol
+        store.config().set("spawns."+id+".yaw", loc.getYaw());
+             ^
+  symbol:   method config()
+  location: variable store of type YamlStore
+/workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/SmpHubService.java:30: error: cannot find symbol
+        store.config().set("spawns."+id+".pitch", loc.getPitch());
+             ^
+  symbol:   method config()
+  location: variable store of type YamlStore
+/workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/SmpHubService.java:35: error: cannot find symbol
+        World w=Bukkit.getWorld(store.config().getString(p+"world",""));
+                                     ^
+  symbol:   method config()
+  location: variable store of type YamlStore
+/workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/SmpHubService.java:38: error: cannot find symbol
+                store.config().getDouble(p+"z"),(float)store.config().getDouble(p+"yaw"),(float)store.config().getDouble(p+"pitch"));
+                                                            ^
+  symbol:   method config()
+  location: variable store of type YamlStore
+/workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/SmpHubService.java:38: error: cannot find symbol
+                store.config().getDouble(p+"z"),(float)store.config().getDouble(p+"yaw"),(float)store.config().getDouble(p+"pitch"));
+                                                                                                     ^
+  symbol:   method config()
+  location: variable store of type YamlStore
+/workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/SmpHubService.java:37: error: cannot find symbol
+        return new Location(w,store.config().getDouble(p+"x"),store.config().getDouble(p+"y"),
+                                   ^
+  symbol:   method config()
+  location: variable store of type YamlStore
+/workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/SmpHubService.java:37: error: cannot find symbol
+        return new Location(w,store.config().getDouble(p+"x"),store.config().getDouble(p+"y"),
+                                                                   ^
+  symbol:   method config()
+  location: variable store of type YamlStore
+/workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/SmpHubService.java:38: error: cannot find symbol
+                store.config().getDouble(p+"z"),(float)store.config().getDouble(p+"yaw"),(float)store.config().getDouble(p+"pitch"));
+                     ^
+  symbol:   method config()
+  location: variable store of type YamlStore
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+14 errors
+3 warnings
+
+> Task :compileJava FAILED
+
+[Incubating] Problems report is available at: file:///workspaces/YetiPL/thisisyetipl/YetiPL-7.4/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileJava'.
+> Compilation failed; see the compiler output below.
+  Note: Recompile with -Xlint:deprecation for details.
+  /workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/listener/CoreListener.java:71: error: cannot find symbol
+      @EventHandler public void onInventoryClick(InventoryClickEvent e){if(!(e.getWhoClicked() instanceof Player p))return;String title=e.getView().getTitle();if(title.equals("✦ YETIBOXXED PRESETS ✦")){e.setCancelled(true);if(e.getRawSlot()==13&&!plugin.presets().owns(p.getUniqueId())){if(plugin.presets().buy(p)){p.closeInventory();plugin.presets().enter(p,p.getUniqueId());}else p.sendMessage(Msg.error("You need "+plugin.presets().purchaseCost()+" ❄."));}else if(e.getRawSlot()==10&&plugin.presets().owns(p.getUniqueId())){p.closeInventory();plugin.presets().enter(p,p.getUniqueId());}else if(e.getRawSlot()==12&&plugin.presets().owns(p.getUniqueId()))pl.menus().upgrades(p);}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ^
+    symbol:   variable pl
+    location: class CoreListener
+  /workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/listener/CoreListener.java:72: error: cannot find symbol
+          if(title.equals("✦ PLOT UPGRADES ✦")){e.setCancelled(true);if(e.getRawSlot()==13){if(plugin.presets().upgrade(p)){p.sendMessage(Msg.gold("Preset upgraded to level "+plugin.presets().level(p.getUniqueId())+"."));pl.menus().upgrades(p);}else p.sendMessage(Msg.error("Upgrade unavailable or insufficient Yeti Coins."));}}
+                                                                                                                                                                                                                             ^
+    symbol:   variable pl
+    location: class CoreListener
+  Note: Some input files use or override a deprecated API.
+  /workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/PresetService.java:22: warning: [removal] DO_MOB_SPAWNING in GameRule has been deprecated and marked for removal
+      public void enable(){ world=Bukkit.getWorld(WORLD_NAME); if(world==null){ WorldCreator c=new WorldCreator(WORLD_NAME); c.environment(World.Environment.NORMAL); c.generator(new VoidGenerator()); world=Bukkit.createWorld(c);} if(world!=null){world.setSpawnLocation(0,65,0);world.setGameRule(GameRule.DO_MOB_SPAWNING,false);world.setGameRule(GameRule.DO_WEATHER_CYCLE,false);} }
+                                                                                                                                                                                                                                                                                                               ^
+  /workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/PresetService.java:22: warning: [removal] DO_WEATHER_CYCLE in GameRule has been deprecated and marked for removal
+      public void enable(){ world=Bukkit.getWorld(WORLD_NAME); if(world==null){ WorldCreator c=new WorldCreator(WORLD_NAME); c.environment(World.Environment.NORMAL); c.generator(new VoidGenerator()); world=Bukkit.createWorld(c);} if(world!=null){world.setSpawnLocation(0,65,0);world.setGameRule(GameRule.DO_MOB_SPAWNING,false);world.setGameRule(GameRule.DO_WEATHER_CYCLE,false);} }
+                                                                                                                                                                                                                                                                                                                                                                 ^
+  /workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/PresetService.java:38: warning: [removal] regenerateChunk(int,int) in World has been deprecated and marked for removal
+      public void reset(UUID owner){Location c=center(owner);if(c==null)return;int radius=size(owner)/2;int minChunkX=(c.getBlockX()-radius)>>4,maxChunkX=(c.getBlockX()+radius)>>4,minChunkZ=(c.getBlockZ()-radius)>>4,maxChunkZ=(c.getBlockZ()+radius)>>4;Deque<int[]> queue=new ArrayDeque<>();for(int x=minChunkX;x<=maxChunkX;x++)for(int z=minChunkZ;z<=maxChunkZ;z++)queue.add(new int[]{x,z});new org.bukkit.scheduler.BukkitRunnable(){@Override public void run(){int budget=6;while(budget-->0&&!queue.isEmpty()){int[] q=queue.removeFirst();world.regenerateChunk(q[0],q[1]);}if(queue.isEmpty()){generatePlatform(owner);cancel();}}}.runTaskTimer(plugin,1L,1L); }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ^
+  /workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/SmpHubService.java:25: error: cannot find symbol
+          store.config().set("spawns."+id+".world", loc.getWorld().getName());
+               ^
+    symbol:   method config()
+    location: variable store of type YamlStore
+  /workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/SmpHubService.java:26: error: cannot find symbol
+          store.config().set("spawns."+id+".x", loc.getX());
+               ^
+    symbol:   method config()
+    location: variable store of type YamlStore
+  /workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/SmpHubService.java:27: error: cannot find symbol
+          store.config().set("spawns."+id+".y", loc.getY());
+               ^
+    symbol:   method config()
+    location: variable store of type YamlStore
+  /workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/SmpHubService.java:28: error: cannot find symbol
+          store.config().set("spawns."+id+".z", loc.getZ());
+               ^
+    symbol:   method config()
+    location: variable store of type YamlStore
+  /workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/SmpHubService.java:29: error: cannot find symbol
+          store.config().set("spawns."+id+".yaw", loc.getYaw());
+               ^
+    symbol:   method config()
+    location: variable store of type YamlStore
+  /workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/SmpHubService.java:30: error: cannot find symbol
+          store.config().set("spawns."+id+".pitch", loc.getPitch());
+               ^
+    symbol:   method config()
+    location: variable store of type YamlStore
+  /workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/SmpHubService.java:35: error: cannot find symbol
+          World w=Bukkit.getWorld(store.config().getString(p+"world",""));
+                                       ^
+    symbol:   method config()
+    location: variable store of type YamlStore
+  /workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/SmpHubService.java:38: error: cannot find symbol
+                  store.config().getDouble(p+"z"),(float)store.config().getDouble(p+"yaw"),(float)store.config().getDouble(p+"pitch"));
+                                                              ^
+    symbol:   method config()
+    location: variable store of type YamlStore
+  /workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/SmpHubService.java:38: error: cannot find symbol
+                  store.config().getDouble(p+"z"),(float)store.config().getDouble(p+"yaw"),(float)store.config().getDouble(p+"pitch"));
+                                                                                                       ^
+    symbol:   method config()
+    location: variable store of type YamlStore
+  /workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/SmpHubService.java:37: error: cannot find symbol
+          return new Location(w,store.config().getDouble(p+"x"),store.config().getDouble(p+"y"),
+                                     ^
+    symbol:   method config()
+    location: variable store of type YamlStore
+  /workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/SmpHubService.java:37: error: cannot find symbol
+          return new Location(w,store.config().getDouble(p+"x"),store.config().getDouble(p+"y"),
+                                                                     ^
+    symbol:   method config()
+    location: variable store of type YamlStore
+  /workspaces/YetiPL/thisisyetipl/YetiPL-7.4/src/main/java/gg/yetisboxxed/yetipl/service/SmpHubService.java:38: error: cannot find symbol
+                  store.config().getDouble(p+"z"),(float)store.config().getDouble(p+"yaw"),(float)store.config().getDouble(p+"pitch"));
+                       ^
+    symbol:   method config()
+    location: variable store of type YamlStore
+  14 errors
+  3 warnings
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+
+BUILD FAILED in 3s
+1 actionable task: 1 executed

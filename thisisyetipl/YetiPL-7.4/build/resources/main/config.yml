@@ -1,0 +1,144 @@
+branding:
+  prefix: "<gold>✦ YetiPL ✦</gold>"
+  server-name: "YetisBOXXED"
+
+error-handling:
+  isolate-module-failures: true
+  max-recent-errors: 250
+  log-stacktraces: true
+
+startup:
+  run-self-test: true
+
+modules:
+  diagnostics: true
+  updates: true
+  worldedit: true
+  regions: true
+  warps: true
+  portals: true
+  ranks: true
+  vaults: true
+  enderchests: true
+  presets: true
+  yeti-coins: true
+  shop: true
+  custom-items: true
+  crates: true
+  gens: true
+  archaeology: true
+  potions: true
+  holograms: true
+  chat-filter: true
+  chat-games: true
+  mentions: true
+  moderation: true
+  anti-cheat: true
+  lag-protector: true
+  resource-pack: true
+  trims: true
+  shopkeepers: true
+  music-discs: true
+  bugs: true
+  item-disguise: true
+  scoreboard: true
+  workstations: true
+  item-editor: true
+  cosmetics: true
+  permissions-bridge: true
+
+worldedit:
+  max-blocks: 100000
+
+pvp:
+  attack-cooldown-ms: 600
+  allow-naked-killing: false
+
+freeze:
+  block-chat: false
+
+chat-games:
+  interval-ticks: 6000
+  minimum-players: 1
+  reward-coins: 50
+
+scoreboard:
+  enabled: true
+
+resource-pack:
+  required: true
+  # Put the direct HTTPS URL to your hosted YetiPL resource-pack ZIP here.
+  # Once configured, set required: true to require it.
+  url: ""
+
+rules:
+  lines:
+    - "Be respectful."
+    - "Do not cheat, exploit, or intentionally lag the server."
+    - "Follow staff instructions."
+    - "Have fun on YetisBOXXED."
+
+discord:
+  url: "https://discord.gg/pvxYxHkpE"
+
+# ─────────────────────────────────────────────────────────────
+# YetiPL 7.4 — Hub / YetisSMP / Economy / YetiBot
+# ─────────────────────────────────────────────────────────────
+hub:
+  world: "yetipl_hub"
+  xp-level: 0
+  xp-progress: 0.0
+  suppress-initial-join-message: true
+  selector:
+    enabled: true
+    item-id: "yetipl:server_selector"
+    display-name: "✦ YETIBOXXED SERVER SELECTOR ✦"
+    slot: 4
+    custom-model-data: 7401
+    # Resource-pack art: half yellow, half green.
+  region:
+    use-worldedit-selection: true
+    create-worldguard-region: true
+    region-id: "yetipl_hub"
+
+smp:
+  world-border-size: 50000
+  worlds:
+    resource:
+      world-name: "yetis_resource"
+      transferable-resources: true
+      claims: false
+    actual:
+      world-name: "yetis_smp"
+      claims: false
+    claiming:
+      world-name: "yetis_claiming"
+      claims: true
+      claim-tool: "GOLDEN_HOE"
+      claim-border-color: "GOLD"
+    cool:
+      world-name: "yetis_cool"
+      claims: true
+      tpa: true
+      datapack: "YetiPL-Cool-World-Datapack-7.4.zip"
+      custom-biomes: 29
+
+economy:
+  currency-name: "YetiCoins"
+  symbol: "¥"
+  tebex:
+    console-command: "giveyeticoins"
+
+yetibot:
+  enabled: false
+  provider: "groq-compatible"
+  api-url: "https://api.groq.com/openai/v1/chat/completions"
+  api-key: ""
+  model: ""
+  cooldown-seconds: 5
+  max-response-characters: 600
+  save-feedback: true
+  system-prompt: "You are YetiBot, the clearly identified YetisBOXXED server helper. Help with server questions and collect constructive feedback. Never claim to be a human staff member."
+
+admin:
+  console-broadcast-prefix: "CONSOLE"
